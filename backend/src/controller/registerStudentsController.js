@@ -4,6 +4,7 @@ import jsonwebtoken from "jsonwebtoken"
 import bcrypts from "bcryptjs"
 
 import StudentsModel from "../models/students.js"
+import registerEmail from "../utils/registerEmail.js"
 
 import { config } from "../config.js"
 import { text } from "stream/consumers"
