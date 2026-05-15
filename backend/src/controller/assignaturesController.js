@@ -53,11 +53,13 @@ AssignaturesController.put = async (req, res) => {
             return res.status(404).json({ message: "Completar todos los campos" });
         }
 
-        teacherExist = await TeachersModel.findById({ teacher_id });
-        if(!teacherExist){
-            return res.status(404).status({ message: "Id teahcer not avaible" });
+        const updateAssignature = await AssignaturesModel.findByIdAndUpdate(req.params.id, { subjectName, teacher_id, isAvailable }, { new: true })
+
+        if(!updateAssignature){
+            return res.status(404).json({ message: "Student not found" })
         }
         
+        return res.status(200).json({ message: "Student updated" })
     } catch (error) {
         console.log("Error: " + error)
         return res.status(500).json({ message: "Internal Server error" })
@@ -66,7 +68,7 @@ AssignaturesController.put = async (req, res) => {
 
 AssignaturesController.delete = async (req, res) => {
     try {
-        const deleteAssignature = AssignaturesModel.findByIdAndDelete(req.params.id)
+        const deleteAssignature = await AssignaturesModel.findByIdAndDelete(req.params.id)
         if(!deleteAssignature){
             return res.status(400).json({ message: "Assignature not founded" })
         }

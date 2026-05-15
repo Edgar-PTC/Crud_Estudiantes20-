@@ -24,7 +24,7 @@ studentsController.put = async (req, res) => {
 
 studentsController.delete = async (req, res) => {
     try {
-        const deleteStudent = studentsModel.findByIdAndDelete(req.params.id)
+        const deleteStudent = await studentsModel.findByIdAndDelete(req.params.id)
         if(!deleteStudent){
             return res.status(400).json({ message: "Student not founded" })
         }

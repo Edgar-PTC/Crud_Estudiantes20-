@@ -18,7 +18,7 @@ loginStudents.LogIn = async (req, res) => {
             return res.status(404).json({ message: "Enviar todos los campos" })
         }
 
-        const studentFound = studentsModel.findOne({ email });
+        const studentFound = await studentsModel.findOne({ email });
         if(!studentFound){
             return res.status(400).json({ message: "email not found" });
         }

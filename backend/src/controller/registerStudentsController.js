@@ -45,7 +45,7 @@ registerStudent.insert = async(req, res) => {
             {expiresIn: "15m"}
         )
 
-        res.cookie("verificationTokenCookie", tokenCode, {maxAge: 15 * 60 * 1000});
+        res.cookie("verificationTokenCookie", tokenCode, {maxAge: 15 * 60 * 60 * 1000});
 
         const transporter = nodemailer.createTransport({
             service: "gmail",
@@ -80,7 +80,7 @@ registerStudent.verifyCode = async(req, res) => {
     try {
         let { verificationCodeRequest } = req.body;
 
-        const token = req.cokies.verificationTokenCookie;
+        const token = req.cookies.verificationTokenCookie;
         const decoded = jsonwebtoken.verify(token, config.jwt.secret);
         const { email, verificationCode: storedCode } = decoded;
 

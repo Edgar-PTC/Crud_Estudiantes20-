@@ -18,7 +18,7 @@ loginTeachers.LogIn = async (req, res) => {
             return res.status(404).json({ message: "Enviar todos los campos" })
         }
 
-        const teacherFound = teacherModel.findOne({ email });
+        const teacherFound = await teacherModel.findOne({ email });
         if(!teacherFound){
             return res.status(400).json({ message: "email not found" });
         }
@@ -35,7 +35,7 @@ loginTeachers.LogIn = async (req, res) => {
                 teacherFound.loginAttempts = 0;
                 teacherFound.timeOut = Date.now() + 5 * 60 * 1000
 
-                await teacherFound.saver();
+                await teacherFound.save();
                 return res.status(404).json({ message: "Many login Attemps" })
             }
 

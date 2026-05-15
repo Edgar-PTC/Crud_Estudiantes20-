@@ -79,7 +79,7 @@ registerTeachers.verifyCode = async(req, res) => {
     try {
         let { verificationCodeRequest } = req.body;
         
-        const token = req.cokies.verificationTokenCookie;
+        const token = req.cookies.verificationTokenCookie;
         const decoded = jsonwebtoken.verify(token, config.jwt.secret);
         const { email, verificationCode: storedCode } = decoded;
         
