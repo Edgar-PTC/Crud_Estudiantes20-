@@ -20,14 +20,3 @@ export const config={
         frontend_url: process.env.FRONTEND_URL
     }
 }
-
-/*DB_URL="mongodb://localhost:27017/evaluacion_Backend"
-
-JWT_SECRET_KEY="la_llave_secreta_super_alucinante_y_quizas_no_muy_segura_para_el_proyecto"
-
-SENDER_EMAIL="ed.pineda.boom@gmail.com"
-SENDER_PASSWORD="tijz pici xgyc qsqb"
-
-FRONTEND_URL="http://localhost:5173"
-
-PORT="4000"*/
