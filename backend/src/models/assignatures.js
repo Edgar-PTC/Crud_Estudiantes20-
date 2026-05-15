@@ -4,7 +4,7 @@
     isAvailable
 */
 
-import mongoose, { Model, model, Schema } from "mongoose"
+import { Schema, model, mongoose } from "mongoose"
 import Teachers from "./teachers.js"
 
 const assignaturesModel = new Schema({

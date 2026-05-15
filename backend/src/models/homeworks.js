@@ -6,7 +6,7 @@
     status
 */
 
-import { Model, model, Schema } from "mongoose"
+import { Schema, model } from "mongoose"
 
 const homeworksModel = new Schema({
     "title": {
@@ -29,4 +29,4 @@ const homeworksModel = new Schema({
     strict: false
 })
 
-export default Model("Homeworks", homeworksModel)
+export default model("Homeworks", homeworksModel)

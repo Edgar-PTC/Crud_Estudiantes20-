@@ -24,7 +24,12 @@ teachersController.put = async (req, res) => {
 
 teachersController.delete = async (req, res) => {
     try {
+        const deleteTeacher = teachersModel.findByIdAndDelete(req.params.id)
+        if(!deleteTeacher){
+            return res.status(400).json({ message: "Teacher not founded" })
+        }
         
+        return res.status(200).json({ message: "Teacher deleted" })
     } catch (error) {
         console.log("Error: " + error)
         return res.status(500).json({ message: "Internal Server error" })

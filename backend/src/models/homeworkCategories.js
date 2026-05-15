@@ -5,7 +5,7 @@
     isActive
 */
 
-import { Model, model, Schema } from "mongoose"
+import { Schema, model } from "mongoose"
 
 const homeworkCategoriesModel = new Schema({
     "categoryName": {
@@ -25,4 +25,4 @@ const homeworkCategoriesModel = new Schema({
     strict: false
 })
 
-export default Model("HomeworkCategories", homeworkCategoriesModel)
+export default model("HomeworkCategories", homeworkCategoriesModel)

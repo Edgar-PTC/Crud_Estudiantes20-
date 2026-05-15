@@ -24,7 +24,12 @@ studentsController.put = async (req, res) => {
 
 studentsController.delete = async (req, res) => {
     try {
+        const deleteStudent = studentsModel.findByIdAndDelete(req.params.id)
+        if(!deleteStudent){
+            return res.status(400).json({ message: "Student not founded" })
+        }
         
+        return res.status(200).json({ message: "Student deleted" })
     } catch (error) {
         console.log("Error: " + error)
         return res.status(500).json({ message: "Internal Server error" })

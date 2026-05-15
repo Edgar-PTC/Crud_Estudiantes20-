@@ -11,7 +11,8 @@
     timeOut
 */
 
-import { Model, model, Schema } from "mongoose"
+import { Schema, model } from "mongoose"
+
 
 const teachersModel = new Schema({
     "name": {
@@ -49,4 +50,4 @@ const teachersModel = new Schema({
     strict: false
 })
 
-export default Model("Teachers", teachersModel);
+export default model("Teachers", teachersModel);

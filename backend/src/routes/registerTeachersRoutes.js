@@ -1,14 +1,10 @@
 import e from "express";
-
+import registerTeachers from "../controller/registerTeachersController.js";
 
 const router = e.Router();
 
-router.route("/")
-.get()
-.post
+router.route("/").post(registerTeachers.insert)
 
-router.route("/:id")
-.put()
-.delete()
+router.route("/verifyCode").post(registerTeachers.verifyCode)
 
 export default router;

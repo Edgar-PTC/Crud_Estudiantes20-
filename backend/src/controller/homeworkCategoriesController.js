@@ -33,7 +33,12 @@ homeworkCategoriesController.put = async (req, res) => {
 
 homeworkCategoriesController.delete = async (req, res) => {
     try {
-        
+        const deleteCategory = homeworkCategoriesModel.findByIdAndDelete(req.params.id)
+        if(!deleteCategory){
+            return res.status(400).json({ message: "Category not founded" })
+        }
+
+        return res.status(200).json({ message: "Category deleted" })
     } catch (error) {
         console.log("Error: " + error)
         return res.status(500).json({ message: "Internal Server error" })
