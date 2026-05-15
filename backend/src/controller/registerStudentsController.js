@@ -14,7 +14,7 @@ const registerStudent = {}
 
 registerStudent.insert = async(req, res) => {
     try {
-        const { name, lastName, email, password, birthdate, phone, grade} = req.body;
+        let { name, lastName, email, password, birthdate, phone, grade} = req.body;
 
         name = name?.trim()
         lastName = lastName?.trim()
@@ -78,7 +78,7 @@ registerStudent.insert = async(req, res) => {
 
 registerStudent.verifyCode = async(req, res) => {
     try {
-        const { verificationCodeRequest } = req.body;
+        let { verificationCodeRequest } = req.body;
 
         const token = req.cokies.verificationTokenCookie;
         const decoded = jsonwebtoken.verify(token, config.jwt.secret);

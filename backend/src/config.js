@@ -26,7 +26,7 @@ export const config={
 JWT_SECRET_KEY="la_llave_secreta_super_alucinante_y_quizas_no_muy_segura_para_el_proyecto"
 
 SENDER_EMAIL="ed.pineda.boom@gmail.com"|
-SENDER_PASSWORD=""
+SENDER_PASSWORD="qemq rvab tyfg sfbm"
 
 FRONTEND_URL="http://localhost:5173"
 

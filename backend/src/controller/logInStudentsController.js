@@ -9,7 +9,7 @@ const loginStudents = {}
 
 loginStudents.LogIn = async (req, res) => {
     try {
-        const { email, password } = req.body;
+        let { email, password } = req.body;
 
         email = email?.trim();
         password = password?.trim();

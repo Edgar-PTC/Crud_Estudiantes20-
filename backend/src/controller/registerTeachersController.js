@@ -14,7 +14,7 @@ const registerTeachers = {}
 
 registerTeachers.insert = async(req, res) => {
     try {
-        const { name, lastName, email, password, phone, speciality} = req.body;
+        let { name, lastName, email, password, phone, speciality} = req.body;
 
         name = name?.trim()
         lastName = lastName?.trim()
@@ -77,7 +77,7 @@ registerTeachers.insert = async(req, res) => {
 
 registerTeachers.verifyCode = async(req, res) => {
     try {
-        const { verificationCodeRequest } = req.body;
+        let { verificationCodeRequest } = req.body;
         
         const token = req.cokies.verificationTokenCookie;
         const decoded = jsonwebtoken.verify(token, config.jwt.secret);

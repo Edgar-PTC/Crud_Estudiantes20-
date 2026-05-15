@@ -16,7 +16,7 @@ AssignaturesController.get = async (req, res) => {
 
 AssignaturesController.insert = async (req, res) => {
     try {
-        const { subjectName, teacher_id, isAvailable } = req.body();
+        let { subjectName, teacher_id, isAvailable } = req.body;
 
         //Validaciones
         subjectName = subjectName?.trim();
@@ -43,7 +43,7 @@ AssignaturesController.insert = async (req, res) => {
 
 AssignaturesController.put = async (req, res) => {
     try {
-        const { subjectName, teacher_id, isAvailable } = req.body();
+        let { subjectName, teacher_id, isAvailable } = req.body;
 
         //Validaciones
         subjectName = subjectName?.trim();
