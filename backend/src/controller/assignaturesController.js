@@ -56,10 +56,10 @@ AssignaturesController.put = async (req, res) => {
         const updateAssignature = await AssignaturesModel.findByIdAndUpdate(req.params.id, { subjectName, teacher_id, isAvailable }, { new: true })
 
         if(!updateAssignature){
-            return res.status(404).json({ message: "Student not found" })
+            return res.status(404).json({ message: "Assignature not found" })
         }
         
-        return res.status(200).json({ message: "Student updated" })
+        return res.status(200).json({ message: "Assignature updated" })
     } catch (error) {
         console.log("Error: " + error)
         return res.status(500).json({ message: "Internal Server error" })
