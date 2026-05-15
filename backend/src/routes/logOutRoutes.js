@@ -1,5 +1,5 @@
 import e from "express";
-import logOutController from "../controller/LogOutController";
+import logOutController from "../controller/LogOutController.js";
 
 const router = e.Router();
 

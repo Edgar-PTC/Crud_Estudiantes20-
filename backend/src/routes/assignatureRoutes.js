@@ -1,5 +1,5 @@
 import e from "express";
-import AssignaturesController from "../controller/assignaturesController";
+import AssignaturesController from "../controller/assignaturesController.js";
 
 const router = e.Router();
 

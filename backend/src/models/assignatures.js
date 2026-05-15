@@ -5,7 +5,7 @@
 */
 
 import mongoose, { Model, model, Schema } from "mongoose"
-import Teachers from "./teachers"
+import Teachers from "./teachers.js"
 
 const assignaturesModel = new Schema({
     "subjectName": {
@@ -23,4 +23,4 @@ const assignaturesModel = new Schema({
     strict: false
 })
 
-export default Model("Assignatures", assignaturesModel)
+export default model("Assignatures", assignaturesModel)
