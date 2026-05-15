@@ -4,18 +4,17 @@
     isAvailable
 */
 
-import { Schema, model, mongoose } from "mongoose"
-import Teachers from "./teachers.js"
+import mongoose, { Schema, model } from "mongoose"
 
 const assignaturesModel = new Schema({
-    "subjectName": {
+    subjectName: {
         type: String
     },
-    "teacher_id": {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: Teachers
+    teacher_id: {
+        type: mongoose.Types.ObjectId,
+        ref: "Teachers"
     },
-    "isAvailable": {
+    isAvailable: {
         type: Boolean
     }
 }, {

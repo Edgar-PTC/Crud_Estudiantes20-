@@ -1,6 +1,5 @@
 import express from "express"
 import AssignaturesModel from "../models/assignatures.js"
-import TeachersModel from "../models/teachers.js"
 
 const AssignaturesController  = {}
 
@@ -24,11 +23,6 @@ AssignaturesController.insert = async (req, res) => {
 
         if( !subjectName || !teacher_id ){
             return res.status(404).json({ message: "Completar todos los campos" });
-        }
-
-        teacherExist = await TeachersModel.findById({ teacher_id });
-        if(!teacherExist){
-            return res.status(404).status({ message: "Id teahcer not avaible" });
         }
 
         const newAssignature = AssignaturesModel({ subjectName, teacher_id, isAvailable: isAvailable || true })

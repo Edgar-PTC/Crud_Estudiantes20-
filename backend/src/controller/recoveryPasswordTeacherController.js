@@ -63,6 +63,7 @@ recoveryPasswordTeacherController.verifyCode = async (req, res) => {
     
         const token = req.cookies.RecoveryTokenCookie;
         const decoded = jsonwebtoken.verify(token, config.jwt.secret);
+        const email = decoded.email;
     
         if(CodeRequest !== decoded.recoveryCode){
             return res.status(400).json({ message: "Code incorrect" })
