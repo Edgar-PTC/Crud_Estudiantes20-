@@ -45,7 +45,7 @@ registerStudent.insert = async(req, res) => {
             {expiresIn: "15m"}
         )
 
-        res.cookie("verificationTokenCookie", tokenCode, {maxAge: 15 * 60 * 60 * 1000});
+        res.cookie("verificationTokenCookie", tokenCode, {maxAge: 15 * 60 * 1000});
 
         const transporter = nodemailer.createTransport({
             service: "gmail",
