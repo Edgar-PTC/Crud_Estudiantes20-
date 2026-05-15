@@ -1,5 +1,5 @@
 const recoveryEmail = (code) => {
-    return(`
+    return`
     <!DOCTYPE html>
     <html lang="en">
     <head>
@@ -13,6 +13,6 @@ const recoveryEmail = (code) => {
             <div style="font-size: 24px; font-weight: bold; color: #007BFF; margin-top: 10px;">${code}</div>
     </body>
     </html>
-`)
+`
 }
 export default recoveryEmail;
