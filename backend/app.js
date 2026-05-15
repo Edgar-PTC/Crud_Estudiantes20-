@@ -21,7 +21,7 @@ const app = e();
 app.use(limiter);
 
 app.use(cors ({
-    origin: ["http://localhost:5173"],
+    origin: ["https://localhost:5173"],
     credentials: true
 }));
 
